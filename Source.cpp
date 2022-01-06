@@ -1,11 +1,13 @@
 #include"Invoices.h"
 
+vector<CMstProduct>vecProduct;
+
 int CInvoices::m_nInvoiceNumber = 1;
 vector <CInvoices> vecAllInvoice;
 
 void new_entry()
 {
-	CInvoices *ptemp = new CInvoices();
+	CInvoices *ptemp = new CInvoices(vecProduct);
 	vecAllInvoice.push_back((*ptemp));
 	delete(ptemp);
 }

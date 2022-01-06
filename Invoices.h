@@ -1,10 +1,9 @@
 #include"MstProduct.h"
 
-vector<CMstProduct>vecProduct;
-
 class CInvoices
 {
 	const int m_ninvoice_number;
+	vector<CMstProduct>&m_vecProduct;
 	vector<CMstProduct>m_vecProductPurchase;
 	vector<int>m_vecQuantity;
 	static int m_nInvoiceNumber;
@@ -16,7 +15,7 @@ class CInvoices
 	int m_nYear;
 
 public:
-	CInvoices();
+	CInvoices(vector<CMstProduct>&vecTempProduct);
 	~CInvoices();
 
 	void giveInvoiceNumber();

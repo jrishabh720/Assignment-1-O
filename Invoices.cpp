@@ -1,6 +1,6 @@
 #include "Invoices.h"
 
-CInvoices::CInvoices() :m_ninvoice_number(m_nInvoiceNumber)
+CInvoices::CInvoices(vector<CMstProduct>&vecTempProduct) :m_ninvoice_number(m_nInvoiceNumber), m_vecProduct(vecTempProduct)
 {
 	m_nNet = 0;
 	m_nTotalProducts = 0;
@@ -28,7 +28,7 @@ CInvoices::CInvoices() :m_ninvoice_number(m_nInvoiceNumber)
 		{
 			cout << "PNo. Products " << endl;
 			int nTemp=1;
-			for (auto &x : vecProduct)
+			for (auto &x : vecTempProduct)
 			{
 				cout << setw(5) << nTemp << "  ";
 				nTemp++;
@@ -38,12 +38,12 @@ CInvoices::CInvoices() :m_ninvoice_number(m_nInvoiceNumber)
 			cout << "Enter Product No - ";
 			int nPn;
 			cin >> nPn;
-			m_vecProductPurchase.push_back(vecProduct[nPn - 1]);
+			m_vecProductPurchase.push_back(vecTempProduct[nPn - 1]);
 			cout << "Enter Quantity - ";
 			int nQ;
 			cin >> nQ;
 			m_nTotalProducts += nQ;
-			m_nNet += (vecProduct[nPn - 1].getMRP())*nQ;
+			m_nNet += (vecTempProduct[nPn - 1].getMRP())*nQ;
 			m_vecQuantity.push_back(nQ);
 		}
 		else 
@@ -89,14 +89,14 @@ void CInvoices::giveProductInfo()
 	cout << "MRP   ";
 	cout << "Amt   " << endl;
 	cout << "------------------------------------" << endl;;
-	int siz = vecProduct.size();
+	int siz = m_vecProduct.size();
 	for (int i = 0; i < siz; i++) 
 	{
 		cout << setw(16);
-		vecProduct[i].getProductName();
+		m_vecProduct[i].getProductName();
 		cout << setw(8) << m_vecQuantity[i];
-		cout << setw(6) << vecProduct[i].getMRP();
-		cout << setw(6) << m_vecQuantity[i] * (vecProduct[i].getMRP()) << endl;
+		cout << setw(6) << m_vecProduct[i].getMRP();
+		cout << setw(6) << m_vecQuantity[i] * (m_vecProduct[i].getMRP()) << endl;
 	}
 	cout << "Net Amount - " << m_nNet << endl;
 }
