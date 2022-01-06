@@ -1,4 +1,4 @@
-#include"invoices.h"
+#include"Invoices.h"
 
 vector<CMstProduct>vecProduct;
 
@@ -65,12 +65,11 @@ void takeTask() {
 		int nOperation;
 		cin >> nOperation;
 		system("CLS");
-		if (nOperation == 1)
-		{
+		switch (nOperation) {
+		case 1:
 			new_entry();
-		}
-		else if (nOperation == 2)
-		{
+			break;
+		case 2:
 			cout << "|  Inv No";
 			cout << "   | Cust_Name           ";
 			cout << "   | No of Products   ";
@@ -86,9 +85,8 @@ void takeTask() {
 			int nExit;
 			cout << "Enter 1 to exit - ";
 			cin >> nExit;
-		}
-		else if (nOperation == 3)
-		{
+			break;
+		case 3:
 			cout << "Enter Invoice No. - ";
 			int t_inv;
 			cin >> t_inv;
@@ -97,35 +95,31 @@ void takeTask() {
 			int nExit;
 			cout << "Enter 1 to exit - ";
 			cin >> nExit;
-		}
-		else if (nOperation == 4)
-		{
+			break;
+		case 4:
 			system("CLS");
 			addProduct();
-		}
-		else if (nOperation == 5)
-		{
+			break;
+		case 5:
 			cout << "All Products " << endl;
 			allProduct();
 			int nExit;
 			cout << "Enter 1 to exit - ";
 			cin >> nExit;
-		}
-		else if (nOperation == 6)
-		{
+			break;
+		case 6:
 			cout << "All Products " << endl;
 			allProduct();
 			cout << "Enter the product number for update - ";
 			int nTemp;
 			cin >> nTemp;
 			vecProduct[nTemp].updatePrice();
-		}
-		else if (nOperation == 7)
-		{
+			break;
+		case 7:
 			return;
-		}
-		else {
+		default:
 			cout << "Wrong Input" << endl;
+			break;
 		}
 	}
 }
