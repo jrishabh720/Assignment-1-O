@@ -92,9 +92,11 @@ void takeTask() {
 			cin >> t_inv;
 			system("CLS");
 			vecAllInvoice[t_inv - 1].giveProductInfo();
-			int nExit;
-			cout << "Enter 1 to exit - ";
-			cin >> nExit;
+			{
+				int nExit;
+				cout << "Enter 1 to exit - ";
+				cin >> nExit;
+			}
 			break;
 		case 4:
 			system("CLS");
@@ -103,9 +105,11 @@ void takeTask() {
 		case 5:
 			cout << "All Products " << endl;
 			allProduct();
-			int nExit;
-			cout << "Enter 1 to exit - ";
-			cin >> nExit;
+			{
+				int nExit;
+				cout << "Enter 1 to exit - ";
+				cin >> nExit;
+			}
 			break;
 		case 6:
 			cout << "All Products " << endl;
