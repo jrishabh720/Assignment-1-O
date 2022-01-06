@@ -11,15 +11,15 @@ using namespace std;
 class CMstProduct
 {
 	string m_strProductName;
-	int m_nmrp;
+	float m_nmrp;
 
 public:
 	CMstProduct();
 	~CMstProduct();
 
-	void giveProductName();
+	void getProductName();
 
-	int giveMrp();
+	int getMRP();
 
 	void updatePrice();
 

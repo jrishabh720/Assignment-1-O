@@ -110,13 +110,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Cinvoices.cpp" />
+    <ClCompile Include="Invoices.cpp" />
     <ClCompile Include="MstProduct.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Cinvoices.h" />
-    <ClInclude Include="HGlobal.h" />
+    <ClInclude Include="Invoices.h" />
     <ClInclude Include="MstProduct.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -15,7 +15,7 @@ CMstProduct::~CMstProduct()
 void CMstProduct::updatePrice() 
 {	
 	cout << "Enter the New Price of "; 
-	giveProductName();
+	getProductName();
 	cout << endl;
 	cin >> m_nmrp;
 	cout << "Updated" << endl;
@@ -24,12 +24,12 @@ void CMstProduct::updatePrice()
 	cin >> nTemp;
 }
 
-void CMstProduct::giveProductName() 
+void CMstProduct::getProductName() 
 {
 	cout << m_strProductName;
 }
 
-int CMstProduct::giveMrp()
+int CMstProduct::getMRP()
 { 
 	return m_nmrp;
 }
