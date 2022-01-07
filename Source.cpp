@@ -1,11 +1,13 @@
 #include"Invoices.h"
 
+vector<CMstProduct>vecProduct;
+
 int CInvoices::m_nInvoiceNumber = 1;
 vector <CInvoices> vecAllInvoice;
 
 void new_entry()
 {
-	CInvoices *ptemp = new CInvoices();
+	CInvoices *ptemp = new CInvoices(vecProduct);
 	vecAllInvoice.push_back((*ptemp));
 	delete(ptemp);
 }
@@ -89,7 +91,7 @@ void takeTask() {
 			int t_inv;
 			cin >> t_inv;
 			system("CLS");
-			vecAllInvoice[t_inv - 1].giveProductInfo();
+			vecAllInvoice[t_inv - 1].giveProductInfo(vecProduct);
 			{
 				int nExit;
 				cout << "Enter 1 to exit - ";

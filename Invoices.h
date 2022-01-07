@@ -1,7 +1,5 @@
 #include"MstProduct.h"
 
-vector<CMstProduct>vecProduct;
-
 class CInvoices
 {
 	const int m_ninvoice_number;
@@ -16,7 +14,7 @@ class CInvoices
 	int m_nYear;
 
 public:
-	CInvoices();
+	CInvoices(vector<CMstProduct>&vecProductTemp);
 	~CInvoices();
 
 	void giveInvoiceNumber();
@@ -27,6 +25,6 @@ public:
 
 	void giveNetAmount(); 
 
-	void giveProductInfo();
+	void giveProductInfo(vector<CMstProduct>&vecProductTemp);
 };
 
